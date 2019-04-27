@@ -2,6 +2,13 @@
 
     require_once("bootstrap.php");
 
+    $post = new Post();
+    $post->getPost();
+
+    $conn = Db::getInstance();
+    $statement = $conn->prepare("select * from post");
+    $statement->execute();
+    $collection = $statement->fetchAll();
 
 
 
@@ -12,30 +19,6 @@
 
 
 
-
-
-    /*$passenger1 = new Passenger();
-    $passenger1->setFirstname("Joris");
-    $passenger1->setLastname("Hens");
-
-    $passenger2 = new Passenger();
-    $passenger2->setFirstname("David");
-    $passenger2->setLastname("Heerinckx");
-
-    $ticket = new Ticket();
-    $ticket->setPassenger($passenger1); // dependency injection
-    $ticket->book();
-    echo $ticket->getTicket();
-
-    $ticketVip = new TicketVip();
-    $ticketVip->setPassenger($passenger2); // dependency injection
-    $ticketVip->setSeat(88);
-    $ticketVip->setMeal("vegi");
-    $ticketVip->book();
-    echo $ticketVip->getTicket();
-
-    echo $passenger1;
-*/
 ?>
 <!DOCTYPE html>
     <html lang="en">
@@ -43,9 +26,20 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="css/index.css">
         <title>Document</title>
     </head>
     <body>
         <a href="upload.php">UPLOAD</a>
+
+        <div class="collection">
+            <?php foreach($collection as $c): ?>
+            <div class="post">
+            
+            <img src="img/uploads/<?php echo $c['picture'] ?>" alt="<?php echo $c['picture'] ?>" class="postimg">
+            <h2><?php echo $c['description']; ?></h2>
+            </div>
+        <?php endforeach; ?>
+  </div>
     </body>
     </html>

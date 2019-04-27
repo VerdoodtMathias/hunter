@@ -1,26 +1,26 @@
 <?php 
 
     class Post {
-        private $picture;
+        private $image;
         private $description;
 
 
         /**
-         * Get the value of image
+         * Get the value of picture
          */ 
-        public function getPicture()
+        public function getImage()
         {
-                return $this->picture;
+                return $this->image;
         }
 
         /**
-         * Set the value of image
+         * Set the value of picture
          *
          * @return  self
          */ 
-        public function setPicture($picture)
+        public function setImage($image)
         {
-                $this->picture = $picture;
+                $this->image = $image;
 
                 return $this;
         }
@@ -50,7 +50,7 @@
         public function SavePost() {
             $conn = Db::getInstance();
             $statement = $conn->prepare("insert into post (picture, description) VALUES (:p, :d)");
-            $statement->bindValue(":p", $this->getPicture());
+            $statement->bindValue(":p", $this->getImage());
             $statement->bindValue(":d", $this->getDescription());
 
             if ($statement->execute()){
@@ -58,6 +58,14 @@
             } else {
                 return false;
             }
+        }
+
+        public function getPost(){
+            $conn = Db::getInstance();
+            $statement = $conn->prepare("select * from post");
+            $statement->execute();
+            $collection = $statement->fetchAll();
+            return $collection;
         }
 
     }
