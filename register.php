@@ -53,7 +53,7 @@ if(!empty($_POST)){
     <title>Register</title>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
     <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
 </head>
 <body>
     <?php if(!empty($error)): ?>
