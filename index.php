@@ -56,6 +56,21 @@
     
    
     </div>
+
+
+
+     <a href="upload.php">UPLOAD</a>
+
+        <div class="collection">
+            <?php foreach($collection as $c): ?>
+            <div class="post">
+            
+            <img src="img/uploads/<?php echo $c['picture'] ?>" alt="<?php echo $c['picture'] ?>" class="postimg">
+            <h2><?php echo $c['description']; ?></h2>
+            </div>
+        <?php endforeach; ?>
+  </div>
+x
  
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/moment@2.22.1/moment.min.js"></script>
