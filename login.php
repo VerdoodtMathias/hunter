@@ -1,72 +1,62 @@
 <?php
+include_once ('classes/Login.class.php');
+// test
+if (!empty($_POST)) {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
 
-	spl_autoload_register(function($class) {
-		include_once("classes/" . $class . ".class.php");
-	});
+    $login = new Login();
+    $login->setUsername($username);
+    $login->setPassword($password);
+    $login->canLogin();
+    if (!$login->canLogin()) {
+        $error = "";
+    }
 
-	if(!empty($_POST)){
-		$username= $_POST['username'];
-		$password = $_POST['password'];
-		try{
-			// start database connection
-			$db = Db::getInstance();
-			$user = new User($db);
-			$user->setUsername($username);
-			$user->setPassword($password);
-			if($user->canILogin($username, $password)){
-				$user->login();
-			}
-			else{
-				$error = true;
-			}
-		}
-		catch(Exception $e){
-			$error =$e->getMessage();
-		}
-	}
+}
 
-?><!DOCTYPE html>
+?><!doctype html>
 <html lang="en">
 <head>
+    <title>Login - Inspiration Hunter</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Log In</title>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="shortcut icon" href="images/logo.ico">
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/mobile-reset.css">
+    <link href="https://fonts.googleapis.com/css?family=Karla:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="css/logreg.css">
 </head>
 <body>
-	<?php if(!empty($error)): ?>
-        <div class="profile__change__msg profile__change__msg--error">
-            <p><?php echo $error ?></p>
-        </div>
+
+
+<form action="" method="post" id="logreg_form">
+    <img src="images/logotext.svg" alt="">
+    <h1>Login</h1>
+    <br>
+    <?php if (isset($error)): ?>
+        <div class="form_error">Username and Password don't match.</div>
     <?php endif; ?>
-	<div class="pinsightLogin">
+    <label for="username">Username</label>
+    <br>
+    <input type="text" name="username" id="username">
+    <br>
 
-		<div class="form form--login">
-      
-			<form action="" method="post">
-				<h2 class="form__title">Log In</h2>
+    <label for="password">Password</label>
+    <br>
+    <input type="password" name="password" id="password">
+    <br>
 
-				<div class="form__field">
-					<label for="username">Username</label>
-					<input type="text" id="username" name="username" placeholder="Your Username">
-				</div>
-				<div class="form__field">
-					<label for="password">Password</label>
-					<input type="password" id="password" name="password" placeholder="Password">
-				</div>
-        <div class="form__field remember">
-          <input type="checkbox" id="rememberMe">
-          <label for="rememberMe" class="label__inline">Remember me</label>
-        </div>
-				<div class="form__field">
-					<input type="submit" value="Sign in" class="btn btn--primary">
-        </div>
-				<p class="link">Not a member? <a href="register.php">Sign up now!</a></p>
-			</form>
-		</div>
-	</div>
+    <input type="submit" value="Login">
+    <br>
+    
+    <a href="register.php">No account yet? Create account.</a>
+</form>
+
+
+
 </body>
 </html>
