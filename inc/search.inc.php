@@ -15,7 +15,17 @@
                 <?php endforeach; ?>
             </a>
 
-           
+           <br>
+            <div id="img-div">
+                <a href="details.php?watch=<?echo $row['id'];?>">
+                    <figure class="<?php echo $row['filter'] ?>">
+                        <img src="<?php echo 'images/uploads/'.$row['post_img']; ?>" alt="post_img" width="50px" height="auto">
+                    </figure>
+                </a>
+            </div>
+            <h2><?php echo htmlspecialchars($row['title']); ?></h2>
+
+
 
 
         </li>
