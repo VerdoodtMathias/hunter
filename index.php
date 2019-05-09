@@ -24,6 +24,7 @@ $username = $getUsername->postUsername();
 <head>
     <?php include_once ('inc/head.inc.php'); ?>
     <title>Home - Inspiration Hunter</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
 </head>
 <body>
 
