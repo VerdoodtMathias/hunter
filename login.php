@@ -28,13 +28,13 @@ if (!empty($_POST)) {
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/mobile-reset.css">
     <link href="https://fonts.googleapis.com/css?family=Karla:400,700" rel="stylesheet">
-    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/logreg.css">
 </head>
 <body>
 
 
 <form action="" method="post" id="logreg_form">
-    <img src="images/logotext.svg" alt="">
+    <img src="images/Picture%20Purrrfect.png" alt="">
     <h1>Login</h1>
     <br>
     <?php if (isset($error)): ?>

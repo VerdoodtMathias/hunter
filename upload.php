@@ -16,7 +16,6 @@ if (!empty($_POST)){
     $image = $newfilename;
 
 
-    
     $user_id = $_SESSION['user_id'];
 
     try {
