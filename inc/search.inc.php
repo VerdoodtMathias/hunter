@@ -15,7 +15,7 @@
                 <?php endforeach; ?>
             </a>
 
-           <br>
+            <br>
             <div id="img-div">
                 <a href="details.php?watch=<?echo $row['id'];?>">
                     <figure class="<?php echo $row['filter'] ?>">
@@ -24,8 +24,6 @@
                 </a>
             </div>
             <h2><?php echo htmlspecialchars($row['title']); ?></h2>
-
-
 
 
         </li>
