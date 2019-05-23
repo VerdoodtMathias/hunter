@@ -13,6 +13,7 @@ try {
     $feedback = [
         'status' => 'liked'
     ];
+
 } catch (Exception $e) {
     die("Something went wrong.");
 }
