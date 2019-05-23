@@ -17,7 +17,7 @@ $username = $getUsername->postUsername();
 <html lang="en">
 <head>
     <?php include_once ('inc/head.inc.php'); ?>
-    <title>Discover - Inspiration Hunter</title>
+    <title>Discover - Picture Purrrfect</title>
 </head>
 <body>
 
@@ -26,16 +26,6 @@ $username = $getUsername->postUsername();
 
 <section class="content">
     <h1 id="welcome">Let's find some people to follow, <strong class="username"><?php echo $_SESSION['username']; ?></strong></h1>
-
-<style>
- #map {
-   width: 100%;
-   height: 400px;
-   background-color: grey;
- }
-</style>
-    <div id="map"></div>
- 
 
 
     <?php if (isset($result)): ?>

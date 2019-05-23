@@ -23,12 +23,12 @@ if (!empty($_POST)) {
 ?><!doctype html>
 <html lang="en">
 <head>
-    <title>Register - Inspiration Hunter</title>
+    <title>Register - Picture Purrrfect</title>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="shortcut icon" href="images/Picture%20Purrrfect.png">
+    <link rel="shortcut icon" href="images/logo.ico">
 
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/mobile-reset.css">

@@ -60,7 +60,7 @@ if (!empty($_POST['comment'])){
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>InspirationHunter Profile Page</title>
+    <title>Picture Purrrfect Profile Page</title>
     <?php include_once ('inc/head.inc.php'); ?>  
     <link rel="stylesheet" href="css/profile.css">  
 
@@ -98,7 +98,7 @@ if (!empty($_POST['comment'])){
             </div>
 
             <div class="accountanddiscription">
-                <h1 style="font-size: 1.3em; color: grey; margin: 20px 0px 0px 0px; font-weight: 10; color: whitesmoke;"  class="bio"><span style="color: darkgray;">Bio:</span> <?php echo $userDetails['bio'] ?></h1>
+                <h1 style="font-size: 1.3em; color: grey; margin: 20px 0px 0px 0px; font-weight: 10; color: grey;"  class="bio"><span style="color: #395188;">Bio:</span> <?php echo $userDetails['bio'] ?></h1>
             </div>
             
             <?php if($g_userID == $user_id){ ?>

@@ -26,7 +26,7 @@ $posts = $locationdetails;
 <html lang="en">
 <head>
     <?php include_once ('inc/head.inc.php'); ?>
-    <title>Location Details - Inspiration Hunter</title>
+    <title>Location Details - Picture Purrrfect</title>
 </head>
 <body>
 

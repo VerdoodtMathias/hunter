@@ -66,7 +66,7 @@ if( $statement->rowCount() > 0){
 <head>
     <meta charset="UTF-8">
     <?php include_once ('inc/head.inc.php'); ?>
-    <title>InspirationHunter Settings</title>
+    <title>Picture Purrrfect Settings</title>
     <link rel="stylesheet" href="css/style.css">
 	
 </head>

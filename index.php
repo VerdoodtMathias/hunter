@@ -23,7 +23,7 @@ $username = $getUsername->postUsername();
 <html lang="en">
 <head>
     <?php include_once ('inc/head.inc.php'); ?>
-    <title>Home - Inspiration Hunter</title>
+    <title>Home - Picture Purrrfect</title>
 </head>
 <body>
 
@@ -33,19 +33,19 @@ $username = $getUsername->postUsername();
 <section class="content">
     <h1 id="welcome">Welcome, <strong class="username"><?php echo $_SESSION['username']; ?></strong></h1>
 
-    <?php if (isset($result)) { ?>
-        <? if (count($result) != 0) {?>
-            <?php include_once ('inc/search.inc.php'); ?>
-        <? } else { ?>
-            <p>No search results... try again...</p>
-        <? } ?>
-    <?php } ?>
-
-    <?php if (!isset($result)): ?>
-
-        <h3 style="font-weight:700; font-size:1.3em;">Your feed</h3>
-        <?php include_once ('inc/posts.inc.php');?>
-    <?php endif; ?>
+   <?php
+        if (isset($result)) {
+            
+            if (sizeof($result) > 0) {
+                include_once ('inc/search.inc.php');
+            } else {
+                echo '<p>No search results... try again...</p>';
+            }
+        } else {
+            echo '<h3 style="font-weight:700; font-size:1.3em;">Your feed</h3>';
+            include_once ('inc/posts.inc.php');
+        }
+    ?>
     
 </section>
 

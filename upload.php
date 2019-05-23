@@ -59,7 +59,7 @@ if (!empty($_POST)){
 <html lang="en">
 <head>
     <?php include_once ('inc/head.inc.php'); ?>
-    <title>Upload Post - Inspiration Hunter</title>
+    <title>Upload Post - Picture Purrrfect</title>
 </head>
 <body>
 
