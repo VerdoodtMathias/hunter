@@ -19,7 +19,7 @@
 </header>
 
 
-<?
+<?php
 
 // SEARCH
 if (!empty($_GET['search'])) {
