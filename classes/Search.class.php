@@ -16,8 +16,8 @@ class Search {
 
     public function _Search() {
         $conn = Db::getInstance();
-        $search = $this->getSearchTerm();
-        $search = "%$search%";
+        
+        $search = "%$this->search_term%";
 
         $stmt = $conn->prepare("select * from posts WHERE title LIKE :s");
         $stmt->bindValue(":s", $search);
