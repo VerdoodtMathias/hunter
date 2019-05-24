@@ -4,8 +4,7 @@ include_once("Db.class.php");
 class Photo
 {
 
-// SAMUEL CODE GEHEUGENSTEUNTJE = public function getPhoto(ARGUMENT) -> Argument gebruiken voor exacte user te bepalen, user wordt meegegeven 
-// met het argument.
+
 public function getPhoto($id){
 
         $conn =  Db::getInstance();

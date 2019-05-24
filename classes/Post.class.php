@@ -27,10 +27,6 @@ class Post {
     }
     public function setImage($image)
     {
-        // Image crop! werkt nog niet...
-        /*$size = 400;
-        $image_crop = imagecrop($image, ['x' => 0, 'y' => 0, 'width' => $size, 'height' => $size]);
-        $image = $image_crop;*/
         $this->image = $image;
     }
 
